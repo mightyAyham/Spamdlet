@@ -14,20 +14,19 @@ print(f"""
 /____/ .___/\__,_/_/ /_/ /_/\__,_/_/\___/\__/
     /_/
               
-(скрипт использует рандомные фото по вашему запросу, используя сайт unsplash.com)
+(the script uses random photos of your choice using unsplash.com)
                
 """)
 time.sleep(2)
 
 threads = 1
 
-search = input("Введите ваш запрос для фото: ").replace(" ", "+")
+search = input("search for an image: ").replace(" ", "+")
 
-wall_id = int(input('Введите wall_id: '))
-wall_section_id = int(input('Введите wall_section_id: '))
-subject = input('Введите заголовок для вложения (по желанию): ')
-body = input('Введите текст для вложения (по желанию): ')
-threads = int(input('Введите количество потоков для спамма (по умолчанию 1): '))
+wall_id = int(input('input the wall_id: '))
+subject = input('choose a subject (optional): ')
+body = input('choose text (optional): ')
+threads = int(input('number of CPU threads to use (default is 1): '))
 
 headers = {
     'user-agent' : 'Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0',
@@ -43,7 +42,6 @@ def main():
         for results in img['results']:
             payload = {
                             'wall_id' : wall_id,
-                            'wall_section_id' : wall_section_id,
                             'attachment' : results['urls']['full'],
                             'body' : body,
                             'subject' : subject,
@@ -51,10 +49,10 @@ def main():
                         }
             response = rq.post('https://padlet.com/api/3/wishes', headers = headers, data = payload)
             if response.status_code == 201:
-                print('Отправлено успешно')
+                print('sumbitted successfully')
             else:
                 print(response.status_code)
-                print('Что-то пошло не так...')
+                print('Something went wrong...')
 
 
             

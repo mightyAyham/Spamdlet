@@ -1,18 +1,22 @@
 # Spamdlet
-Это простой скрипт для спамма на платформе Padlet, написанный на Python.
-# Как этим пользоваться?
-(Для работы скрипта вам нужно установить **requests**, введя в консоль **pip3 install requests**).
+This is a simple Padlet spam script written in Python.
+# How to use this script?
+(For the script to work, you need to install requests by entering **pip3 install requests** in the terminal).
 
-При запуске скрипта вам надо будет wall_id и wall_section_id, а также ссылку на вложение, которым вы будете спамить.
-# Как узнать wall_id и wall_section_id?
-Нужно воспользоваться **инструментами разработчика**, нажав F12 на клавиатуре (перед этим нужно зайти на нужный вам падлет).
+When you run the script, you will need wall_id, as well as a link to the attachment that you will spam.
+# How do I find out the wall_id and wall_section_id?
+You need to use the **developer tools** by pressing **F12** on the keyboard (before that you need to go to the padlet you need).
 
-Далее вы переходите в вкладку **Сети** и уже в падлете создаете любой пост.
+Then you go to the **Networks** tab and refresh the page.
 
-После вы увидите что в вкладке появиться файл с названием **wishes**, нажав на который вы найдете wall_id и wall_section_id
+Then you will see that a file with the name **wishes** appears in the tab, by clicking on which you will find **wall_id**. If you can't find it you can search for **wall_id**
 
+# Firefox
 ![](image/screenshot.png)
 
-> Все действия были выполнены в **Firefox**, возможно в других браузерах процесс будет отличаться.
+# Chromium based
+![](image/screenshot-chromium.png)
 
-> Скрипт работает только при расположении обьектов столбцами в нужном вам падлете
+> All actions were performed in **Firefox** and **Chromium** the process may be different in other browsers.
+
+> The script works only when the objects are arranged in columns in the padlet you need
